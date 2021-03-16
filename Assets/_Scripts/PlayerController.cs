@@ -12,7 +12,8 @@ public class PlayerController : SteerableBehaviour, IShooter, IDamageable
     public float shootDelay = 1.0f;
 
     private float _lastShootTimestamp = 0.0f;
-
+    public AudioClip shootSFX;
+    
     private void Start() {
         animator = GetComponent<Animator>();
         lifes = 10;
@@ -21,6 +22,8 @@ public class PlayerController : SteerableBehaviour, IShooter, IDamageable
 
     public void Shoot() {
         if (Time.time - _lastShootTimestamp < shootDelay) return;
+
+        AudioManager.PlaySFX(shootSFX); // play shoot sound
 
        _lastShootTimestamp = Time.time;
 
