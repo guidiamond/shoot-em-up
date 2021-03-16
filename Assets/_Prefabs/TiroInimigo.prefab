@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3526391766476648816}
   - component: {fileID: 2675823197933495323}
   - component: {fileID: 5243540903471127730}
-  - component: {fileID: 2507541151378999450}
+  - component: {fileID: 6510447654841047754}
   m_Layer: 0
-  m_Name: Tiro
+  m_Name: TiroInimigo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4952719b80190a0488cb13977474ddb9, type: 3}
-  m_Color: {r: 0.21495916, g: 1, b: 0.0141509175, a: 1}
+  m_Color: {r: 1, g: 0.0956518, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2507541151378999450
+--- !u!114 &6510447654841047754
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3291118475558149579}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9a11e295f53bc44eb5914a6a881036f, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f91643c54f61d3469c54cb9e5c4e9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   td: {fileID: 11400000, guid: be9eda9102240754981455296af40b86, type: 2}

@@ -1039,6 +1039,8 @@ GameObject:
   - component: {fileID: 1420920053}
   - component: {fileID: 1420920057}
   - component: {fileID: 1420920056}
+  - component: {fileID: 1420920059}
+  - component: {fileID: 1420920058}
   - component: {fileID: 1420920055}
   m_Layer: 0
   m_Name: Enemy
@@ -1124,6 +1126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   td: {fileID: 11400000, guid: 388701daaa55c334e9f5368eb44c325e, type: 2}
+  tiro: {fileID: 3291118475558149579, guid: abf7123e5f75ecc40871813f93215d8b, type: 3}
 --- !u!61 &1420920056
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1171,6 +1174,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1420920058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420920052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddb3ac8f408eb4f4885a656eeed97fbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1420920059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420920052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7001c73ffd414dc45a07ed12f28b9df5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootDelay: 1
 --- !u!1 &1853042904
 GameObject:
   m_ObjectHideFlags: 0
