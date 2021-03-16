@@ -6,20 +6,31 @@ public class PlayerController : SteerableBehaviour, IShooter, IDamageable
 {
   
     Animator animator;
+    private int lifes;
+    public GameObject bullet;
+    public Transform arma;
+    public float shootDelay = 1.0f;
+
+    private float _lastShootTimestamp = 0.0f;
 
     private void Start() {
         animator = GetComponent<Animator>();
+        lifes = 10;
     }
 
 
-    public void Shoot()
-    {
-        throw new System.NotImplementedException();
+    public void Shoot() {
+        if (Time.time - _lastShootTimestamp < shootDelay) return;
+
+       _lastShootTimestamp = Time.time;
+
+       Instantiate(bullet, arma.position, Quaternion.identity);
     }
 
     public void TakeDamage()
     {
-        throw new System.NotImplementedException();
+        lifes--;
+        if (lifes <= 0) Die();
     }
 
     public void Die()
@@ -46,6 +57,10 @@ public class PlayerController : SteerableBehaviour, IShooter, IDamageable
         else {
             animator.SetFloat("Velocity", 0.0f);
         }
+
+        if(Input.GetAxisRaw("Fire1") != 0) {
+           Shoot();
+       }
     }    
 
 
