@@ -35,7 +35,6 @@ public class PlayerController : SteerableBehaviour, IShooter, IDamageable {
 
     public void TakeDamage() {
         lifes--;
-        Debug.Log(lifes);
         if (lifes <= 0)
             Die();
     }
@@ -46,6 +45,7 @@ public class PlayerController : SteerableBehaviour, IShooter, IDamageable {
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Inimigos")) {
+            Debug.Log("tapatrao");
             Destroy(collision.gameObject);
             TakeDamage();
         }

@@ -10,11 +10,10 @@ public class ShotBehaviour : SteerableBehaviour {
             return;
 
         IDamageable damageable = collision.gameObject.GetComponent(typeof(IDamageable)) as IDamageable;
-
         if (!( damageable is null )) {
             damageable.TakeDamage();
         }
-        Destroy(gameObject);
+        Destroy(collision.gameObject);
     }
     // Update is called once per frame
     private void Update() {

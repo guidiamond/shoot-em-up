@@ -24,8 +24,6 @@ public class GameManager {
         pontos = 0;
     }
     public void ChangeState(GameState nextState) {
-
-        Debug.Log(nextState);
         if (nextState == GameState.GAME && isUnPause == false) {
             Reset();
         }
