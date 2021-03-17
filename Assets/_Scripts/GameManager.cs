@@ -24,8 +24,16 @@ public class GameManager {
         pontos = 0;
     }
     public void ChangeState(GameState nextState) {
+
+        Debug.Log(nextState);
         if (nextState == GameState.GAME && isUnPause == false) {
             Reset();
+        }
+        if (nextState == GameState.GAME) {
+            Time.timeScale = 1;
+        }
+        else {
+            Time.timeScale = 0;
         }
         gameState = nextState;
         changeStateDelegate();
@@ -35,6 +43,7 @@ public class GameManager {
         vidas = 3;
         pontos = 0;
         gameState = GameState.MENU;
+        Time.timeScale = 0;
     }
 
     public static GameManager GetInstance() {

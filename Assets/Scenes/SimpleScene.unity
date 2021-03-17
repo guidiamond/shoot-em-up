@@ -1063,6 +1063,7 @@ GameObject:
   - component: {fileID: 775516712}
   - component: {fileID: 775516714}
   - component: {fileID: 775516713}
+  - component: {fileID: 775516716}
   - component: {fileID: 775516715}
   m_Layer: 5
   m_Name: Panel_Pause
@@ -1141,6 +1142,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96bcd4b3199afb540a90de765c1a3b93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &775516716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775516711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f667d04387c117c459ce53c814e698ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeStates: 02000000
 --- !u!1 &831978366
 GameObject:
   m_ObjectHideFlags: 0
@@ -2567,6 +2581,7 @@ GameObject:
   - component: {fileID: 1678109333}
   - component: {fileID: 1678109335}
   - component: {fileID: 1678109334}
+  - component: {fileID: 1678109337}
   - component: {fileID: 1678109336}
   m_Layer: 5
   m_Name: Panel_EndGame
@@ -2646,6 +2661,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   message: {fileID: 1303095372}
+--- !u!114 &1678109337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678109332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f667d04387c117c459ce53c814e698ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeStates: 03000000
 --- !u!1 &1853042904
 GameObject:
   m_ObjectHideFlags: 0
