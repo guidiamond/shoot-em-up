@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerController : SteerableBehaviour, IShooter, IDamageable {
 
     Animator animator;
-    private int lifes;
     public GameObject bullet;
     public Transform arma;
     public float shootDelay = 1.0f;
@@ -17,7 +16,6 @@ public class PlayerController : SteerableBehaviour, IShooter, IDamageable {
 
     private void Start() {
         animator = GetComponent<Animator>();
-        lifes = 10;
         gm = GameManager.GetInstance();
     }
 
@@ -34,8 +32,8 @@ public class PlayerController : SteerableBehaviour, IShooter, IDamageable {
     }
 
     public void TakeDamage() {
-        lifes--;
-        if (lifes <= 0)
+        gm.vidas--;
+        if (gm.vidas <= 0)
             Die();
     }
 
@@ -45,7 +43,6 @@ public class PlayerController : SteerableBehaviour, IShooter, IDamageable {
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Inimigos")) {
-            Debug.Log("tapatrao");
             Destroy(collision.gameObject);
             TakeDamage();
         }
