@@ -14,8 +14,12 @@ public class ShotBehaviour : SteerableBehaviour {
         if (!( collision.gameObject is null )) {
             Destroy(collision.gameObject);
             gm.pontos += 10;
+            gm.enemiesLeft--;
         }
         Destroy(gameObject);
+        if (gm.enemiesLeft <= 0) {
+            gm.ChangeState(GameManager.GameState.ENDGAME);
+        }
     }
     // Update is called once per frame
     private void Update() {

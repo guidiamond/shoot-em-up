@@ -7,8 +7,12 @@ public class Panel_EndGame : MonoBehaviour {
     GameManager gm;
     private void OnEnable() {
         gm = GameManager.GetInstance();
-
-        message.text = $"Your score was: {gm.pontos}";
+        if (gm.vidas > 0 && gm.timeToLose > 0 || gm.enemiesLeft <= 0) {
+            message.text = $"You won!!! Score: {gm.pontos}";
+        }
+        else {
+            message.text = $"You lost!!, Score: {gm.pontos}";
+        }
     }
 
     public void Voltar() {

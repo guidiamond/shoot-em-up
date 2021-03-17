@@ -12,6 +12,10 @@ public class GameManager {
     // Used on BlocoSpawner.Construir and GameManager.ChangeState so if the game is unpaused it doesn't reset the scores
     public bool isUnPause = false;
 
+    public int timer; // B30
+    public int enemiesLeft; // B30
+    public int timeToLose; // B31
+
     public GameState gameState {
         get; private set;
     }
@@ -22,7 +26,11 @@ public class GameManager {
     private void Reset() {
         vidas = 3;
         pontos = 0;
+        timer = 0;
+        timeToLose = 120;
+        enemiesLeft = 30;
     }
+
     public void ChangeState(GameState nextState) {
         if (nextState == GameState.GAME && isUnPause == false) {
             Reset();

@@ -9,6 +9,7 @@ public class MonsterSpawner : MonoBehaviour {
     GameManager gm;
 
     private int spawnInterval; // counts in ms
+    private float msTimer; // counts in ms
 
     void Construir() {
         if (gm.isUnPause == false && gm.gameState == GameManager.GameState.GAME) {
@@ -39,10 +40,22 @@ public class MonsterSpawner : MonoBehaviour {
         GameManager.changeStateDelegate += Construir;
         Construir();
     }
+
     void Update() {
-        if (Time.time > spawnInterval) {
-            spawnInterval = (int) Time.time + 3;
-            Construir();
+        if (gm.gameState == GameManager.GameState.GAME) {
+            if (Time.time > spawnInterval) {
+                spawnInterval = (int) Time.time + 3;
+                Construir();
+            }
+            if (transform.childCount <= 0 || gm.timeToLose <= 0) {
+                gm.ChangeState(GameManager.GameState.ENDGAME);
+            }
+            msTimer += Time.deltaTime;
+            gm.timer = (int) ( msTimer % 60 ); // counts in secs
+            gm.timeToLose = 120 - gm.timer;
+        }
+        if (gm.gameState == GameManager.GameState.MENU || gm.gameState == GameManager.GameState.ENDGAME) {
+            msTimer = 0;
         }
 
 
